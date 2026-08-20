@@ -18,6 +18,9 @@ export default defineConfig({
 	],
 	base: "./",
 	server: {
+		// Make the dev server listen on all interfaces so Codespaces / port preview can reach it
+		host: true,
+		// Ensure cross-origin isolation headers required for threaded WASM / SharedArrayBuffer
 		headers: {
 			"Cross-Origin-Embedder-Policy": "require-corp",
 			"Cross-Origin-Opener-Policy": "same-origin",
